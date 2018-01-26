@@ -13,6 +13,10 @@ public class TheVirus : MonoBehaviour
     // How fast the player loses health when infected
     public float fSpeedOfHPDeduction = 0.0f;
 
+    //private bool bCantInfect = true;
+    //public float fCantInfectTime = 0.0f;
+    //private float fCantInfectCount = 0.0f;
+
 
     // Use this for initialization
     void Start()
@@ -23,8 +27,6 @@ public class TheVirus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (fHealth < 5.0f)
-
         // If the player is infected deduct health
         if (bInfected)
         {
@@ -34,31 +36,88 @@ public class TheVirus : MonoBehaviour
         // If the player is dead kill them
         if (fHealth < 0.0f)
         {
+            Global scpGlobal = GetComponent<Global>();
+            scpGlobal.lstCharacters.RemoveAt(scpGlobal.lstCharacters.Count);
             Destroy(gameObject);
         }
     }
 
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy")
-        {
-            // Collided with character was touched, they are infected
-            if (col.gameObject.GetComponent<TheVirus>().bInfected)
-            {
-                // Current character becomes infected
-                bInfected = true;
 
-                // Collided with character loses their infection
-                col.gameObject.GetComponent<TheVirus>().bInfected = false;
-            }
-            else
-            {
-                // Current character loses the infection
-                bInfected = false;
+        //    if (bCantInfect)
+        //    {
+        //        if (col.gameObject.tag == "Player")
+        //        {
+        //            bCantInfect = false;
 
-                // Collided with character gains the infection
-                col.gameObject.GetComponent<TheVirus>().bInfected = true;
-            }
-        }
+        //            if (bInfected)
+        //            {
+        //                bInfected = false;
+
+        //                col.gameObject.GetComponent<TheVirus>().bInfected = true;
+        //            }
+
+        //            if (!bInfected)
+        //            {
+        //                bInfected = true;
+
+        //                col.gameObject.GetComponent<TheVirus>().bInfected = false;
+        //            }
+        //        }
+
+        //        if (col.gameObject.tag == "Enemy")
+        //        {
+        //            bCantInfect = false;
+
+        //            if (bInfected)
+        //            {
+        //                bInfected = false;
+
+        //                col.gameObject.GetComponent<TheVirus>().bInfected = true;
+        //            }
+
+        //            if (!bInfected)
+        //            {
+        //                bInfected = true;
+
+        //                col.gameObject.GetComponent<TheVirus>().bInfected = false;
+        //            }
+        //        }
+        //    }
+        //    else
+        //    {
+        //        if (fCantInfectCount > fCantInfectTime)
+        //        {
+        //            fCantInfectCount += Time.deltaTime;
+        //        }
+        //        else
+        //        {
+        //            bCantInfect = true;
+        //            fCantInfectCount = 0.0f;
+        //        }
+        //    }
+        //}
+
+        //    if (col.gameObject.tag == "Player")
+        //    {
+        //        // Collided with character was touched, they are infected
+        //        if (col.gameObject.GetComponent<TheVirus>().bInfected)
+        //        {
+        //            // Current character becomes infected
+        //            bInfected = true;
+
+        //            // Collided with character loses their infection
+        //            col.gameObject.GetComponent<TheVirus>().bInfected = false;
+        //        }
+        //        else
+        //        {
+        //            // Current character loses the infection
+        //            bInfected = false;
+
+        //            // Collided with character gains the infection
+        //            col.gameObject.GetComponent<TheVirus>().bInfected = true;
+        //        }
+        //    }
     }
 }
