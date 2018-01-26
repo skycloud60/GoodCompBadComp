@@ -23,6 +23,8 @@ public class TheVirus : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (fHealth < 5.0f)
+
         // If the player is infected deduct health
         if (bInfected)
         {
@@ -38,30 +40,24 @@ public class TheVirus : MonoBehaviour
 
     void OnCollisionEnter(Collision col)
     {
-        // Player infection logic
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" || col.gameObject.tag == "Enemy")
         {
-            // If the player was touched and they are infected
+            // Collided with character was touched, they are infected
             if (col.gameObject.GetComponent<TheVirus>().bInfected)
             {
-                // Enemy become infected
+                // Current character becomes infected
                 bInfected = true;
 
-                // Player loses their infection
+                // Collided with character loses their infection
                 col.gameObject.GetComponent<TheVirus>().bInfected = false;
             }
-        }
-
-        // Enemy infection logic
-        if (col.gameObject.tag == "Enemy")
-        {
-            if (col.gameObject.GetComponent<TheVirus>().bInfected)
+            else
             {
-                // Player becomes infected
-                bInfected = true;
+                // Current character loses the infection
+                bInfected = false;
 
-                // Enemy loses their infection
-                col.gameObject.GetComponent<TheVirus>().bInfected = false;
+                // Collided with character gains the infection
+                col.gameObject.GetComponent<TheVirus>().bInfected = true;
             }
         }
     }

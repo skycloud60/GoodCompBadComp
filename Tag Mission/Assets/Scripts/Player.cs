@@ -10,10 +10,15 @@ public class Player : MonoBehaviour
     // So we can access the player's rigidbody
     private Rigidbody rb;
 
-
+    // The players direction vector
+    Vector3 v3Dir;
+    
     // Use this for initialization
     void Start()
     {
+        // Lock the cursor inside the game
+        Cursor.lockState = CursorLockMode.Locked;
+        
         // Making a variable to control the rigidbody
         rb = GetComponent<Rigidbody>();
     }
@@ -21,22 +26,23 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
     // FixedUpdate is for physics stuff
     void FixedUpdate()
     {
-        // Assigning the horizontal movement via axis grabbing
-        float fMoveHorizontal = Input.GetAxis("Horizontal");
-        
-        // Assigning the vertical movement via axis grabbing
-        float fMoveVertical = Input.GetAxis("Vertical");
 
-        // Making a vector 3 so the player can be moved
-        Vector3 v3Movement = new Vector3(fMoveHorizontal, 0.0f, fMoveVertical);
+        // Moving the player foward when they press W
+        if (Input.GetKey(KeyCode.W))
+        {
+            rb.AddForce(transform.forward * (fSpeed * Time.deltaTime), ForceMode.VelocityChange);
+        }
 
-        // moving the player's rigidbody via the movement times the speed
-        rb.AddForce(v3Movement * fSpeed);
+        // Moving the player backwards when they press S
+        if (Input.GetKey(KeyCode.S))
+        {
+            rb.AddForce(-transform.forward * (fSpeed * Time.deltaTime), ForceMode.VelocityChange);
+        }
     }
 }
