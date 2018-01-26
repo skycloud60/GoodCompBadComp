@@ -24,9 +24,10 @@ GameObject:
   - component: {fileID: 23920626802189458}
   - component: {fileID: 54578058135827014}
   - component: {fileID: 114667009834071598}
+  - component: {fileID: 114960288962377990}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -38,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202326741335804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.525, z: 0}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,7 +110,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686a9d36f6dbe7f43b5ffbe0d7b28840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fSpeed: 1
+  fSpeed: 10
+--- !u!114 &114960288962377990
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202326741335804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d818f5b19ae22a2418e216fbc7fe54f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fHealth: 10
+  bInfected: 0
+  fSpeedOfHPDeduction: 1
 --- !u!135 &135176328279881874
 SphereCollider:
   m_ObjectHideFlags: 1
