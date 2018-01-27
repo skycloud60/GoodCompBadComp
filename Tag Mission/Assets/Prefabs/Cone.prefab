@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 54776188271255276}
   - component: {fileID: 65144340201616490}
   m_Layer: 0
-  m_Name: Cone_Mesh (10)
+  m_Name: Cone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

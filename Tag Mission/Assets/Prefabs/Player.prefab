@@ -100,7 +100,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4317024938489850}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4317024938489850
 Transform:
@@ -108,16 +108,16 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202326741335804}
-  m_LocalRotation: {x: -0, y: 0.6995756, z: -0, w: 0.71455866}
-  m_LocalPosition: {x: 4, y: 0.5, z: 9}
+  m_LocalRotation: {x: -0, y: 0.19235457, z: -0, w: 0.9813255}
+  m_LocalPosition: {x: 5.29, y: 0.5, z: 8.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4011846808418762}
   - {fileID: 4348815608004088}
+  - {fileID: 4011846808418762}
   - {fileID: 4381173897298874}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 88.786, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 22.18, z: 0}
 --- !u!4 &4348815608004088
 Transform:
   m_ObjectHideFlags: 1
@@ -129,7 +129,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4317024938489850}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.603, y: 0, z: 0}
 --- !u!4 &4381173897298874
 Transform:
@@ -193,7 +193,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: bd6c1697ad2df99498fb927fc65d664b, type: 2}
+  - {fileID: 2100000, guid: b66c593c6b0594a4c95d7f1b5a7348ac, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -304,7 +304,7 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202326741335804}
   serializedVersion: 2
-  m_Mass: 1
+  m_Mass: 15
   m_Drag: 0.2
   m_AngularDrag: 0.05
   m_UseGravity: 1
@@ -364,11 +364,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0483f61863405b44aaa1b71639343998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fMinYAngle: 10
+  fMinYAngle: 30
   fMaxYAngle: 40
   target: {fileID: 4317024938489850}
   tCamTransform: {fileID: 0}
-  fDistanceFromPlayer: 10
+  fDistanceFromPlayer: 8.5
   fRotateSpeed: 5
   goLookAtTarget: {fileID: 1142537607920342}
 --- !u!114 &114667009834071598
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686a9d36f6dbe7f43b5ffbe0d7b28840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fSpeed: 10
+  fSpeed: 20
 --- !u!114 &114960288962377990
 MonoBehaviour:
   m_ObjectHideFlags: 1

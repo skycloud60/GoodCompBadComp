@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 23707185036942490}
   - component: {fileID: 64855629491747494}
   m_Layer: 0
-  m_Name: Bridge_Mesh
+  m_Name: Bridge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
