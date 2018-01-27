@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine;
 
 
-public class SliderHP : MonoBehaviour
+public class SliderHPEnemy : MonoBehaviour
 {
     public Slider sli;
 
@@ -17,7 +17,7 @@ public class SliderHP : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        VirusTwo scpTheVirus = GetComponentInParent<VirusTwo>();
+        VirusTwo scpTheVirus = GetComponent<VirusTwo>();
         sli.value = scpTheVirus.fHealth;
     }
 }

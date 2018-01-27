@@ -15,14 +15,15 @@ public class VirusTwo : MonoBehaviour
     private Material currentColour = null;
     private bool ivin = false;
 
+    public float fHealth = 0.0f;
+
 
     // Use this for initialization
     void Start()
     {
-        currentColour = StartingColour;
-        if (currentColour == red)
-            bInfected = true;
-
+    //    currentColour = StartingColour;
+    //    if (currentColour == red)
+    //        bInfected = true;
     }
 
     private void ResetIvin()
@@ -33,10 +34,16 @@ public class VirusTwo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(bInfected)
+        if (bInfected)
+        {
+            fHealth -= 1.0f * Time.deltaTime;
             gameObject.GetComponent<Renderer>().material = red;
+        }
         else
             gameObject.GetComponent<Renderer>().material = white;
+
+        if (fHealth < 0)
+            Destroy(gameObject);
     }
 
     void OnCollisionEnter(Collision col)

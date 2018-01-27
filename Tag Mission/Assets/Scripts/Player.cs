@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool infected = false;
-
     // So you can control the speed of the player
     public float fSpeed = 0.0f;
 
@@ -80,22 +78,5 @@ public class Player : MonoBehaviour
         }
 
 
-    }
-
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player")
-        {
-            if (infected && col.gameObject.tag == "Enemy")
-            {
-                col.gameObject.GetComponent<Player>().infected = true;
-                infected = false;
-            }
-            else if (col.gameObject.GetComponent<Player>().infected)
-            {
-                infected = true;
-                col.gameObject.GetComponent<Player>().infected = false;
-            }
-        }
     }
 }
