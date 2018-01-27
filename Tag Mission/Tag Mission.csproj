@@ -106,6 +106,7 @@
     <Compile Include="Assets\3rd Party Assets\ProCore\ProBuilder\API Examples\Runtime Editing\RuntimeEdit.cs" />
     <Compile Include="Assets\3rd Party Assets\ProCore\ProBuilder\API Examples\Vertex Colors\HighlightNearestFace.cs" />
     <Compile Include="Assets\Scripts\AI.cs" />
+    <Compile Include="Assets\Scripts\CameraController1stPerson.cs" />
     <Compile Include="Assets\Scripts\CameraController3rdPerson.cs" />
     <Compile Include="Assets\Scripts\Global.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
@@ -134,8 +135,6 @@
     <None Include="Assets\3rd Party Assets\ProCore\ProBuilder\Shader\pb_VertexPicker.shader" />
     <None Include="Assets\3rd Party Assets\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
     <None Include="Assets\3rd Party Assets\ProCore\ProBuilder\readme.txt" />
-    <None Include="Assets\Materials\New Text Document.txt" />
-    <None Include="Assets\Meshes\New Text Document.txt" />
     <None Include="Assets\Misc\New Text Document.txt" />
     <None Include="Assets\Textures\New Text Document.txt" />
     <None Include="Assets\UI\New Text Document.txt" />

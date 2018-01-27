@@ -43,6 +43,18 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.S))
         {
             rb.AddForce(-transform.forward * (fSpeed * Time.deltaTime), ForceMode.VelocityChange);
+        } 
+        
+        // Moving the player rightwards when they press D
+        if (Input.GetKey(KeyCode.D))
+        {
+            rb.AddForce(transform.right * (fSpeed * Time.deltaTime), ForceMode.VelocityChange);
+        }
+
+        // Moving the player leftwards when they press A
+        if (Input.GetKey(KeyCode.A))
+        {
+            rb.AddForce(-transform.right * (fSpeed * Time.deltaTime), ForceMode.VelocityChange);
         }
     }
 }

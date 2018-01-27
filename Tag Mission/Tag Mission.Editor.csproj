@@ -230,8 +230,6 @@
     <None Include="Assets\3rd Party Assets\ProCore\ProBuilder\Shader\pb_VertexPicker.shader" />
     <None Include="Assets\3rd Party Assets\ProCore\ProBuilder\Shader\pb_VertexShader.shader" />
     <None Include="Assets\3rd Party Assets\ProCore\ProBuilder\readme.txt" />
-    <None Include="Assets\Materials\New Text Document.txt" />
-    <None Include="Assets\Meshes\New Text Document.txt" />
     <None Include="Assets\Misc\New Text Document.txt" />
     <None Include="Assets\Textures\New Text Document.txt" />
     <None Include="Assets\UI\New Text Document.txt" />

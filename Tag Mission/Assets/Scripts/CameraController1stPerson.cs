@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController3rdPerson : MonoBehaviour
+public class CameraController1stPerson : MonoBehaviour
 {
     // Min angle the target can tilt the camera downwards
     public float fMinYAngle = 0.0f;
@@ -12,13 +12,7 @@ public class CameraController3rdPerson : MonoBehaviour
 
     // The target the camera is following
     public Transform target;
-
-    // The camera's position
-    public Transform tCamTransform;
-
-    // How far away from the target the camera will spawn
-    public float fDistanceFromPlayer = 10.0f;
-
+    
     // The mouse rotation's current x axis value
     private float fCurrentX = 0.0f;
 
@@ -28,15 +22,12 @@ public class CameraController3rdPerson : MonoBehaviour
     // At what speed the target can rotate around the target
     public float fRotateSpeed = 0.0f;
 
-    // The target that the camera will look at so that it not directed at the players feet
-    public GameObject goLookAtTarget;
-
 
     // Use this for initialization
     void Start()
     {
         // Setting the camera's position to the target's position
-        tCamTransform = transform;
+        gameObject.transform.rotation = transform.rotation;
     }
 
     // Update is called once per frame
@@ -46,7 +37,7 @@ public class CameraController3rdPerson : MonoBehaviour
         fCurrentX += Input.GetAxis("Mouse X") * fRotateSpeed;
 
         // Assigning the Y value from the mouse
-        fCurrentY -= Input.GetAxis("Mouse Y");
+        fCurrentY -= Input.GetAxis("Mouse Y") * fRotateSpeed;
 
         // Clamping the max distance that the target can tilt the camera
         fCurrentY = Mathf.Clamp(fCurrentY, fMinYAngle, fMaxYAngle);
@@ -55,8 +46,8 @@ public class CameraController3rdPerson : MonoBehaviour
     // LateUpdate is called every frame, if the Behaviour is enabled
     void LateUpdate()
     {
-        // Setting up a new vector3 at 0, 0, and the distance previously set away from the target
-        Vector3 v3Dir = new Vector3(0, 0, -fDistanceFromPlayer);
+        // Setting up a new vector3 at 0, 0
+        Vector3 v3Dir = new Vector3(0, 0, 0);
 
         // Storing rotation in quaternion from the Euler of the Y and X values
         Quaternion rotation = Quaternion.Euler(fCurrentY, fCurrentX, 0);
@@ -70,10 +61,7 @@ public class CameraController3rdPerson : MonoBehaviour
             target.eulerAngles = new Vector3(0.0f, rotation.eulerAngles.y, 0.0f);
 
             // The camera's position is equal to the targets position plus the rotation times the direction
-            tCamTransform.position = target.position + rotation * v3Dir;
-
-            // Make the camera look at the target
-            tCamTransform.LookAt(goLookAtTarget.transform);
+            gameObject.transform.rotation = rotation;
         }
     }
 }
