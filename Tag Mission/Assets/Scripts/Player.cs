@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool bInfected = false;
+    private bool infected = false;
 
     // So you can control the speed of the player
     public float fSpeed = 0.0f;
@@ -13,8 +13,14 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
 
     // The players direction vector
-    private Vector3 v3Dir;
+    Vector3 v3Dir;
 
+    //Basic acceleration
+    float velocity = 10.0f;
+    float acceleration = 10.0f;
+    float power = 500.0f;
+
+    public float maxSpeed = 1.0f;//Replace with your max speed
 
     // Use this for initialization
     void Start()
@@ -26,9 +32,29 @@ public class Player : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
+
+    void FixedUpdate()
+    {
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.ClampMagnitude(gameObject.GetComponent<Rigidbody>().velocity, maxSpeed);
+    }
+
+
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
+        
+
+        if (gameObject.GetComponent<Rigidbody>().velocity.y > maxSpeed)
+        {
+            // Doing a quick dirty hack to access the read-me only variable
+            // you cannot access a single axis at a time from rigidBody
+            // so we have to make a new vector for it.
+            Vector3 v3 = gameObject.GetComponent<Rigidbody>().velocity;
+            v3.y = maxSpeed;
+            gameObject.GetComponent<Rigidbody>().velocity = v3;
+        }
+
         // Moving the player foward when they press W
         if (Input.GetKey(KeyCode.W))
         {
@@ -52,21 +78,23 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(-transform.right * (fSpeed * Time.deltaTime), ForceMode.VelocityChange);
         }
+
+
     }
 
     void OnCollisionEnter(Collision col)
     {
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player")
         {
-            if (bInfected && col.gameObject.tag == "Enemy")
+            if (infected && col.gameObject.tag == "Enemy")
             {
-                col.gameObject.GetComponent<Player>().bInfected = true;
-                bInfected = false;
+                col.gameObject.GetComponent<Player>().infected = true;
+                infected = false;
             }
-            else if (col.gameObject.GetComponent<Player>().bInfected)
+            else if (col.gameObject.GetComponent<Player>().infected)
             {
-                bInfected = true;
-                col.gameObject.GetComponent<Player>().bInfected = false;
+                infected = true;
+                col.gameObject.GetComponent<Player>().infected = false;
             }
         }
     }
