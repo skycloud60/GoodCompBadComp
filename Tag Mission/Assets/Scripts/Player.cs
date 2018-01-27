@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    private bool infected = false;
+    private bool bInfected = false;
 
     // So you can control the speed of the player
     public float fSpeed = 0.0f;
@@ -13,12 +13,7 @@ public class Player : MonoBehaviour
     private Rigidbody rb;
 
     // The players direction vector
-    Vector3 v3Dir;
-
-    //Basic acceleration
-    float velocity = 10.0f;
-    float acceleration = 10.0f;
-    float power = 500.0f;
+    private Vector3 v3Dir;
 
 
     // Use this for initialization
@@ -34,7 +29,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         // Moving the player foward when they press W
         if (Input.GetKey(KeyCode.W))
         {
@@ -64,15 +58,15 @@ public class Player : MonoBehaviour
     {
         if (col.gameObject.tag == "Enemy" || col.gameObject.tag == "Player")
         {
-            if (infected && col.gameObject.tag == "Enemy")
+            if (bInfected && col.gameObject.tag == "Enemy")
             {
-                col.gameObject.GetComponent<Player>().infected = true;
-                infected = false;
+                col.gameObject.GetComponent<Player>().bInfected = true;
+                bInfected = false;
             }
-            else if (col.gameObject.GetComponent<Player>().infected)
+            else if (col.gameObject.GetComponent<Player>().bInfected)
             {
-                infected = true;
-                col.gameObject.GetComponent<Player>().infected = false;
+                bInfected = true;
+                col.gameObject.GetComponent<Player>().bInfected = false;
             }
         }
     }

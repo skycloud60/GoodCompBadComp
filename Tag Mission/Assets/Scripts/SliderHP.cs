@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
-public class Global : MonoBehaviour
+
+public class SliderHP : MonoBehaviour
 {
-    public List<GameObject> lstCharacters;
+    public Slider sli;
 
     // Use this for initialization
     void Start()
@@ -15,6 +17,7 @@ public class Global : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(lstCharacters.Count);
+        TheVirus scpTheVirus = GetComponentInParent<TheVirus>();
+        sli.value = scpTheVirus.fHealth;
     }
 }
