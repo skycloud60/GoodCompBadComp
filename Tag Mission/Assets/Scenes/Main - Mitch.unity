@@ -216,7 +216,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_Name
-      value: Enemy (3)
+      value: enemy2
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_TagString
@@ -258,12 +258,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lstCharacters:
+  - {fileID: 1656179302}
   - {fileID: 1235236001}
   - {fileID: 571671366}
   - {fileID: 1531650233}
   - {fileID: 1459355877}
   - {fileID: 110255385}
-  - {fileID: 1656179302}
 --- !u!4 &914221194
 Transform:
   m_ObjectHideFlags: 0
@@ -405,7 +405,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_Name
-      value: Enemy (6)
+      value: enemy5
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_TagString
@@ -465,7 +465,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_Name
-      value: Enemy (5)
+      value: enemy4
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_TagString
@@ -612,7 +612,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_Name
-      value: Enemy (4)
+      value: enemy3
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_TagString
@@ -677,7 +677,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_Name
-      value: Enemy (2)
+      value: enemy1
       objectReference: {fileID: 0}
     - target: {fileID: 1202326741335804, guid: b5b40df9751e91448ac551979e98bcc9, type: 2}
       propertyPath: m_TagString

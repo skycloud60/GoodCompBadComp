@@ -17,6 +17,11 @@ public class TheVirus : MonoBehaviour
     //public float fCantInfectTime = 0.0f;
     //private float fCantInfectCount = 0.0f;
 
+    private int nEnemy1 = 0;
+    private int nEnemy2 = 1;
+    private int nEnemy3 = 2;
+    private int nEnemy4 = 3;
+    private int nEnemy5 = 4;
 
     // Use this for initialization
     void Start()
@@ -37,7 +42,9 @@ public class TheVirus : MonoBehaviour
         if (fHealth < 0.0f)
         {
             Global scpGlobal = GetComponent<Global>();
-            scpGlobal.lstCharacters.RemoveAt(scpGlobal.lstCharacters.Count);
+
+            scpGlobal.lstCharacters.RemoveAt(nEnemy1);
+
             Destroy(gameObject);
         }
     }
