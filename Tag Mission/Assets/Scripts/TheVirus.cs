@@ -43,7 +43,7 @@ public class TheVirus : MonoBehaviour
         {
             Global scpGlobal = GetComponent<Global>();
 
-            scpGlobal.lstCharacters.RemoveAt(nEnemy1);
+            //scpGlobal.lstCharacters.RemoveAt(nEnemy1);
 
             Destroy(gameObject);
         }
@@ -52,79 +52,5 @@ public class TheVirus : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
 
-        //    if (bCantInfect)
-        //    {
-        //        if (col.gameObject.tag == "Player")
-        //        {
-        //            bCantInfect = false;
-
-        //            if (bInfected)
-        //            {
-        //                bInfected = false;
-
-        //                col.gameObject.GetComponent<TheVirus>().bInfected = true;
-        //            }
-
-        //            if (!bInfected)
-        //            {
-        //                bInfected = true;
-
-        //                col.gameObject.GetComponent<TheVirus>().bInfected = false;
-        //            }
-        //        }
-
-        //        if (col.gameObject.tag == "Enemy")
-        //        {
-        //            bCantInfect = false;
-
-        //            if (bInfected)
-        //            {
-        //                bInfected = false;
-
-        //                col.gameObject.GetComponent<TheVirus>().bInfected = true;
-        //            }
-
-        //            if (!bInfected)
-        //            {
-        //                bInfected = true;
-
-        //                col.gameObject.GetComponent<TheVirus>().bInfected = false;
-        //            }
-        //        }
-        //    }
-        //    else
-        //    {
-        //        if (fCantInfectCount > fCantInfectTime)
-        //        {
-        //            fCantInfectCount += Time.deltaTime;
-        //        }
-        //        else
-        //        {
-        //            bCantInfect = true;
-        //            fCantInfectCount = 0.0f;
-        //        }
-        //    }
-        //}
-
-        //    if (col.gameObject.tag == "Player")
-        //    {
-        //        // Collided with character was touched, they are infected
-        //        if (col.gameObject.GetComponent<TheVirus>().bInfected)
-        //        {
-        //            // Current character becomes infected
-        //            bInfected = true;
-
-        //            // Collided with character loses their infection
-        //            col.gameObject.GetComponent<TheVirus>().bInfected = false;
-        //        }
-        //        else
-        //        {
-        //            // Current character loses the infection
-        //            bInfected = false;
-
-        //            // Collided with character gains the infection
-        //            col.gameObject.GetComponent<TheVirus>().bInfected = true;
-        //        }
-        //    }
     }
 }
