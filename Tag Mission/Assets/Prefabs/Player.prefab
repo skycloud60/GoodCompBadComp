@@ -108,8 +108,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202326741335804}
-  m_LocalRotation: {x: -0, y: 0.24857174, z: -0, w: 0.9686135}
-  m_LocalPosition: {x: 3, y: 0.5, z: 5}
+  m_LocalRotation: {x: -0, y: 0.6995756, z: -0, w: 0.71455866}
+  m_LocalPosition: {x: 4, y: 0.5, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4011846808418762}
@@ -117,7 +117,7 @@ Transform:
   - {fileID: 4381173897298874}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 28.786001, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.786, z: 0}
 --- !u!4 &4348815608004088
 Transform:
   m_ObjectHideFlags: 1
@@ -193,7 +193,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: e3eb0284ad023ca4a91287932bc2519b, type: 2}
+  - {fileID: 2100000, guid: bd6c1697ad2df99498fb927fc65d664b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,7 +250,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202326741335804}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -296,7 +296,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1113897334600076}
-  m_Mesh: {fileID: 4300000, guid: 3a872952f34e5f549aa18ee751ab30ae, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 4f58e21e4c180fa4ab91f98e5b61db5b, type: 3}
 --- !u!54 &54578058135827014
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686a9d36f6dbe7f43b5ffbe0d7b28840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fSpeed: 15
+  fSpeed: 10
 --- !u!114 &114960288962377990
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fHealth: 10
-  bInfected: 1
+  bInfected: 0
   fSpeedOfHPDeduction: 1
 --- !u!124 &124216578074325376
 Behaviour:
