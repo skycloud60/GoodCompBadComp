@@ -6,7 +6,7 @@ public class EndDecider : MonoBehaviour
 {
     Transform win;
     Transform lose;
-
+    public bool winner;
 
     // Use this for initialization
     void Start()
@@ -18,10 +18,10 @@ public class EndDecider : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (true)
+        if (winner)
             win.transform.position = new Vector3(0, 0, 0);
 
-        if (false)
+        if (!winner)
             lose.transform.position = new Vector3(0, 0, 0);
     }
 }

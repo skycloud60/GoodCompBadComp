@@ -26,7 +26,7 @@ public class SliderHP : MonoBehaviour
         sli.value = scpTheVirus.fHealth;
 
         if (scpTheVirus.bInfected)
-            Fill.color = clrRed;
+            //Fill.color = clrRed;
 
         if (!scpTheVirus.bInfected)
             Fill.color = clrGreen;
