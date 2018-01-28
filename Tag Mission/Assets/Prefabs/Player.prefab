@@ -60,10 +60,26 @@ GameObject:
   - component: {fileID: 23920626802189458}
   - component: {fileID: 54578058135827014}
   - component: {fileID: 114667009834071598}
-  - component: {fileID: 114960288962377990}
+  - component: {fileID: 114146189232673930}
+  - component: {fileID: 114832163693930778}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1483329220632758
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4185948896735712}
+  m_Layer: 0
+  m_Name: LookAtME
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,14 +118,27 @@ Transform:
   m_Father: {fileID: 4317024938489850}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4185948896735712
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1483329220632758}
+  m_LocalRotation: {x: -0.1788305, y: -0, z: -0, w: 0.9838799}
+  m_LocalPosition: {x: 0, y: 1.3979357, z: -0.8567239}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4348815608004088}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4317024938489850
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1202326741335804}
-  m_LocalRotation: {x: -0, y: 0.19235457, z: -0, w: 0.9813255}
-  m_LocalPosition: {x: 5.29, y: 0.5, z: 8.88}
+  m_LocalRotation: {x: -0, y: 0.6995756, z: -0, w: 0.71455866}
+  m_LocalPosition: {x: 4, y: 0.5, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4348815608004088}
@@ -117,7 +146,7 @@ Transform:
   - {fileID: 4381173897298874}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 22.18, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 88.786, z: 0}
 --- !u!4 &4348815608004088
 Transform:
   m_ObjectHideFlags: 1
@@ -127,7 +156,8 @@ Transform:
   m_LocalRotation: {x: 0.1788305, y: -0, z: -0, w: 0.9838799}
   m_LocalPosition: {x: 0, y: 1.77, z: 0.31}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 4185948896735712}
   m_Father: {fileID: 4317024938489850}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 20.603, y: 0, z: 0}
@@ -353,6 +383,22 @@ MonoBehaviour:
   fMaxYAngle: 50
   target: {fileID: 4317024938489850}
   fRotateSpeed: 5
+--- !u!114 &114146189232673930
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1202326741335804}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f68a0e221151141bb0cc1516116bd6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  white: {fileID: 2100000, guid: a254abcad9870674fa4c7b29147d0e22, type: 2}
+  red: {fileID: 2100000, guid: bd6c1697ad2df99498fb927fc65d664b, type: 2}
+  StartingColour: {fileID: 2100000, guid: bd6c1697ad2df99498fb927fc65d664b, type: 2}
+  bInfected: 1
+  fHealth: 10
 --- !u!114 &114253981892992850
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,8 +428,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 686a9d36f6dbe7f43b5ffbe0d7b28840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fSpeed: 20
---- !u!114 &114960288962377990
+  fSpeed: 10
+  maxSpeed: 20
+--- !u!114 &114832163693930778
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -391,12 +438,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1202326741335804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d818f5b19ae22a2418e216fbc7fe54f8, type: 3}
+  m_Script: {fileID: 11500000, guid: 73d2af6d91c037d4b8d116e8880e9d09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fHealth: 10
-  bInfected: 0
-  fSpeedOfHPDeduction: 1
+  sli: {fileID: 0}
+  Fill: {fileID: 0}
+  clrGreen: {r: 0, g: 1, b: 0, a: 1}
+  clrRed: {r: 1, g: 0, b: 0, a: 1}
 --- !u!124 &124216578074325376
 Behaviour:
   m_ObjectHideFlags: 1
@@ -426,6 +474,6 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.64
-  m_Height: 2.8342824
+  m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0, y: 1.4171412, z: 0}
+  m_Center: {x: 0, y: 1.9, z: 0}

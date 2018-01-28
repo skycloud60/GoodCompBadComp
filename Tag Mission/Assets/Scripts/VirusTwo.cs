@@ -9,8 +9,8 @@ public class VirusTwo : MonoBehaviour
     public Material red = null;
     public Material StartingColour = null;
 
-    [SerializeField]
-    private bool bInfected = false;
+    //[HideInInspector]
+    public bool bInfected = false;
 
     private Material currentColour = null;
     private bool ivin = false;
@@ -21,9 +21,9 @@ public class VirusTwo : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-    //    currentColour = StartingColour;
-    //    if (currentColour == red)
-    //        bInfected = true;
+        //    currentColour = StartingColour;
+        //    if (currentColour == red)
+        //        bInfected = true;
     }
 
     private void ResetIvin()
@@ -43,7 +43,7 @@ public class VirusTwo : MonoBehaviour
             gameObject.GetComponent<Renderer>().material = white;
 
         if (fHealth < 0)
-            Destroy(gameObject);
+            Destroy(transform.parent.gameObject);
     }
 
     void OnCollisionEnter(Collision col)
@@ -53,10 +53,11 @@ public class VirusTwo : MonoBehaviour
 
             if (bInfected)
             {
-                if (col.collider.gameObject.GetComponent<VirusTwo>().ivin != true) {
+                if (col.collider.gameObject.GetComponent<VirusTwo>().ivin != true)
+                {
                     ivin = true;
                     Invoke("ResetIvin", 2);
-                    Debug.Log("Hit");
+                    //Debug.Log("Hit");
                     col.collider.gameObject.GetComponent<VirusTwo>().bInfected = true;
                     bInfected = false;
                     col.collider.gameObject.GetComponent<Renderer>().material = red;

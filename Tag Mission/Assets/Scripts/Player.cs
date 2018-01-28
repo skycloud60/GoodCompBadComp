@@ -10,13 +10,13 @@ public class Player : MonoBehaviour
     // So we can access the player's rigidbody
     private Rigidbody rb;
 
-    // The players direction vector
-    Vector3 v3Dir;
+    //// The players direction vector
+    //Vector3 v3Dir;
 
-    //Basic acceleration
-    float velocity = 10.0f;
-    float acceleration = 10.0f;
-    float power = 500.0f;
+    ////Basic acceleration
+    //float velocity = 10.0f;
+    //float acceleration = 10.0f;
+    //float power = 500.0f;
 
     public float maxSpeed = 1.0f;//Replace with your max speed
 
@@ -40,9 +40,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(gameObject.GetComponent<Rigidbody>().velocity.magnitude);
-        
-
         if (gameObject.GetComponent<Rigidbody>().velocity.y > maxSpeed)
         {
             // Doing a quick dirty hack to access the read-me only variable

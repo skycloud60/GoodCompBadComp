@@ -7,6 +7,10 @@ using UnityEngine;
 public class SliderHP : MonoBehaviour
 {
     public Slider sli;
+    public Image Fill;
+    public Color clrGreen = Color.green;
+    public Color clrRed = Color.red;
+
 
     // Use this for initialization
     void Start()
@@ -18,6 +22,13 @@ public class SliderHP : MonoBehaviour
     void Update()
     {
         VirusTwo scpTheVirus = GetComponentInParent<VirusTwo>();
+
         sli.value = scpTheVirus.fHealth;
+
+        if (scpTheVirus.bInfected)
+            Fill.color = clrRed;
+
+        if (!scpTheVirus.bInfected)
+            Fill.color = clrGreen;
     }
 }
